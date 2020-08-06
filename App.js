@@ -13,12 +13,13 @@ import SignupScreen from './screens/SignupScreen' ;
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 
+
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 export default function App() {
 
-  const [authUser, setauthUser] = useState(false);
+  const [authUser, setauthUser] = useState(true);
 //make this variable true to see what user will see when he is logged in
 
 
