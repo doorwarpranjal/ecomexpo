@@ -73,6 +73,11 @@ export default function App() {
           inactiveTintColor: "#ABB4BD",
           inactiveBackgroundColor : '#1E1F28',
           activeBackgroundColor : '#1E1F28',
+          style : StyleSheet.create({
+            borderTopWidth : 0.5,
+            
+            
+          })
   
       
         }}
