@@ -7,7 +7,7 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 export default function HomeScreen() {
     return (
         <View style= {styles.container} >
-            <Text>This is Homepage</Text>
+            <Text>This is Homepage and updated</Text>
             <Button title="Hello"/>
 
         <View style={styles.innerContainer}><Text>This Box is responsive and 70% of width</Text></View>
