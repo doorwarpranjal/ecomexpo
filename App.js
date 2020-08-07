@@ -12,7 +12,6 @@ import LoginScreen from './screens/LoginScreen' ;
 import SignupScreen from './screens/SignupScreen' ;
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Ionicon from 'react-native-vector-icons/Ionicons';
-import {  } from "react-native-reanimated";
 
 
 const Stack = createStackNavigator();
