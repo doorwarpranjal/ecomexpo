@@ -6,8 +6,14 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
+import SignupScreen from './SignupScreen';
 
 export default function LoginScreen({ navigation }) {
+
+const pressHandler = ()=>{
+  navigation.navigate('Signup');
+}
+
   return (
     <View style={styles.container}>
       <View
@@ -19,7 +25,8 @@ export default function LoginScreen({ navigation }) {
           alignItems: "flex-start",
         }}
       >
-        <Icon name="keyboard-arrow-left" size={30} color="#fff" flex='1' />
+        <Icon name="keyboard-arrow-left" size={30} color="#fff" flex='1'
+          onPress={pressHandler}/>
         <Text h1 style={styles.insideText}>
           Login
         </Text>
@@ -72,6 +79,7 @@ export default function LoginScreen({ navigation }) {
          
 
         <Button
+          
           icon={<Icon name="lock-open" size={22} color="white" />}
           iconRight
           title="Login"
