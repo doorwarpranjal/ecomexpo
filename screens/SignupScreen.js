@@ -22,7 +22,8 @@ export default function SignupScreen({navigation}) {
           alignItems: "flex-start",
         }}
       >
-        <Icon name="keyboard-arrow-left" size={30} color="#fff" flex='1' />
+        <Icon name="keyboard-arrow-left" size={30} color="#fff" flex='1'
+        onPress={pressHandler} />
         <Text h1 style={styles.insideText}>
           Sign-Up
         </Text>
