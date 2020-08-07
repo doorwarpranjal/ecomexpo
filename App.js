@@ -13,6 +13,10 @@ import SignupScreen from './screens/SignupScreen' ;
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 
+import WishlistScreen from './screens/WishlistScreen'
+
+
+
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -62,7 +66,10 @@ export default function App() {
               iconName = <Icon name="md-cart" size={28} color={color} />;
             } else if (route.name === "Contact") {
               iconName = <Ionicon name="ios-call" size={28} color={color} />;
+            } else if(route.name ==="Wishlist"){
+              iconName = <Icon name="heart-o" size={28} color={color} />;
             }
+            
 
             // You can return any component that you like here!
             return iconName;
@@ -74,7 +81,7 @@ export default function App() {
           inactiveBackgroundColor : '#1E1F28',
           activeBackgroundColor : '#1E1F28',
           style : StyleSheet.create({
-            borderTopWidth : 0.5,
+            borderTopWidth : 0,
             
             
           })
@@ -87,6 +94,7 @@ export default function App() {
         
         >
           <Tab.Screen name="Home" component={HomeScreen} />
+          <Tab.Screen name="Wishlist" component={WishlistScreen} />
           <Tab.Screen name="Profile" component={ProfileScreen} />
           <Tab.Screen name="Contact" component={ContactScreen} />
         </Tab.Navigator>
