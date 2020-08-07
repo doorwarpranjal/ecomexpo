@@ -8,9 +8,6 @@ import {
 import Icon from "react-native-vector-icons/FontAwesome";
 import ProductCards from "../components/ProductCards";
 import { ScrollView } from "react-native-gesture-handler";
-import * as Font from "expo-font";
-import { AppLoading } from "expo";
-import { loadAsync } from "expo-font";
 
 export default function HomeScreen() {
   const primaryColor = "#EF3651";
