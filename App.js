@@ -12,12 +12,16 @@ import LoginScreen from './screens/LoginScreen' ;
 import SignupScreen from './screens/SignupScreen' ;
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Ionicon from 'react-native-vector-icons/Ionicons';
-import { lessThan } from "react-native-reanimated";
+
+
+import WishlistScreen from './screens/WishlistScreen'
+
+
 
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
-lessThan
+
 export default function App() {
 
   const [authUser, setauthUser] = useState(false);
@@ -25,90 +29,67 @@ export default function App() {
 
 
 
-  function LoginStack({navigation}){
-    return(
-      <Stack.Navigator>
-        <Stack.Screen name="Login" component={LoginScreen}/>
-        <Stack.Screen name="Signup" component={SignupScreen}/>
-      </Stack.Navigator>
-    )
-    }
-
-
+  // function LoginStack({navigation}){
+  //   return(
+  //     <Stack.Navigator>
+  //       <Stack.Screen name="Login" component={LoginScreen}/>
+  //       <Stack.Screen name="Signup" component={SignupScreen}/>
+  //     </Stack.Navigator>
+  //   )
+  //   }
 
 
 
 
   return (
-
-
     <NavigationContainer>
-
       {/* Check if user is logged in if yes we send him to homescreen or else to contact screen */}
 
       {authUser ? (
-        <Tab.Navigator  
-        
-        screenOptions={({ route }) => ({
-          tabBarIcon: ({ focused, color, size }) => {
-            let iconName;
+        <Tab.Navigator
+          screenOptions={({ route }) => ({
+            tabBarIcon: ({ focused, color, size }) => {
+              let iconName;
 
-            if (route.name === "Home") {
-              iconName = <Icon name="home" size={28} color={color} />;
-            } else if (route.name === "Profile") {
-              iconName = (
-                <Icon name="user" size={28} color={color} />
-              );
-            } else if (route.name === "Cart") {
-              iconName = <Icon name="md-cart" size={28} color={color} />;
-            } else if (route.name === "Contact") {
-              iconName = <Ionicon name="ios-call" size={28} color={color} />;
-            }
+              if (route.name === "Home") {
+                iconName = <Icon name="home" size={28} color={color} />;
+              } else if (route.name === "Profile") {
+                iconName = <Icon name="user" size={28} color={color} />;
+              } else if (route.name === "Cart") {
+                iconName = <Icon name="md-cart" size={28} color={color} />;
+              } else if (route.name === "Contact") {
+                iconName = <Ionicon name="ios-call" size={28} color={color} />;
+              } else if (route.name === "Wishlist") {
+                iconName = <Icon name="heart-o" size={28} color={color} />;
+              }
 
-            // You can return any component that you like here!
-            return iconName;
-          },
-        })}
-        tabBarOptions={{
-          activeTintColor: "#EF3651",
-          inactiveTintColor: "#ABB4BD",
-          inactiveBackgroundColor : '#1E1F28',
-          activeBackgroundColor : '#1E1F28',
-          style : StyleSheet.create({
-            borderTopWidth : 0.5,
-            
-            
-          })
-  
-      
-        }}
-        
-        
-        
-        
+              // You can return any component that you like here!
+              return iconName;
+            },
+          })}
+          tabBarOptions={{
+            activeTintColor: "#EF3651",
+            inactiveTintColor: "#ABB4BD",
+            inactiveBackgroundColor: "#1E1F28",
+            activeBackgroundColor: "#1E1F28",
+            style: StyleSheet.create({
+              borderTopWidth: 0,
+            }),
+          }}
         >
           <Tab.Screen name="Home" component={HomeScreen} />
+          <Tab.Screen name="Wishlist" component={WishlistScreen} />
           <Tab.Screen name="Profile" component={ProfileScreen} />
           <Tab.Screen name="Contact" component={ContactScreen} />
         </Tab.Navigator>
       ) : (
-        
-
-        <Stack.Navigator>
-          <Stack.Screen
-            name="Login"
-            component={LoginScreen}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Signup"
-            component={SignupScreen}
-            options={{ headerShown: false }}
-          />
+        <Stack.Navigator  screenOptions={{
+          headerShown: false
+        }}>
+          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="Signup" component={SignupScreen} />
         </Stack.Navigator>
-
       )}
     </NavigationContainer>
-   
   );
 }

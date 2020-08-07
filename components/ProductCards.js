@@ -11,30 +11,30 @@ export default function ProductCards({promos,title}) {
     return (
        <View>
 
-<View style={styles.offerPanel}>
-            <Text style={{
-              fontSize: 22,
-              marginBottom: 15,
-              fontWeight: "bold",
-              marginLeft: 10,
-              color: 'white',
-              marginLeft : 20,
-              fontWeight : 'bold'
-            }}>{title} <Entypo name="new" size={22} color="lightgray" ></Entypo> </Text>
-            <FlatList horizontal={true}
-              data={promos}
-              showsHorizontalScrollIndicator={false}
-              renderItem={({ item }) => {
-                return (
+            <View style={styles.offerPanel}>
+                <Text style={{
+                    fontSize: 22,
+                    marginBottom: 15,
+                    fontWeight: "bold",
+                    marginLeft: 10,
+                    color: 'white',
+                    marginLeft: 20,
+                    fontWeight: 'bold'
+                }}>{title} <Entypo name="new" size={22} color="lightgray" ></Entypo> </Text>
+                <FlatList horizontal={true}
+                    data={promos}
+                    showsHorizontalScrollIndicator={false}
+                    renderItem={({ item }) => {
+                        return (
 
-                  <Image
-                    style={styles.box}
-                    source={{ uri: item.name }}
-                  />
-                )
-              }}
-            />
-          </View>
+                            <Image
+                                style={styles.box}
+                                source={{ uri: item.name }}
+                            />
+                        )
+                    }}
+                />
+            </View>
 
 
        </View>

@@ -93,8 +93,13 @@ export default function LoginScreen({ navigation }) {
           iconContainerStyle={{ marginLeft: 10 }}
           containerStyle={{ marginTop: 25 }}
         />
+
+<Text onPress={()=>{navigation.navigate('Signup')}} style={{color : '#fff',marginTop : 20}}>New User ? SignUp</Text>
        
       </View>
+
+
+      
     </View>
   );
 }
@@ -113,7 +118,7 @@ const styles = StyleSheet.create({
   insideText: {
     color: "#fff",
     fontWeight:'bold',
-    flex:'1',
+    flex:1,
     marginTop:hp('5%'),
     marginLeft: wp("5%"),
   },
