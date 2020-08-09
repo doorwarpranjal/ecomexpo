@@ -105,7 +105,7 @@ const pressHandler = ()=>{
         />
 
 <TouchableOpacity>
-<Text onPress={pressHandler} style={{color : '#fff',marginTop : 20}}>New User ? SignUp</Text>
+<Text onPress={pressHandler} style={{color : '#fff',marginTop : 20, fontWeight: "bold"}}>New User ? SignUp</Text>
 </TouchableOpacity>      
 
 

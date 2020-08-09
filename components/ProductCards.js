@@ -1,5 +1,6 @@
 import React from 'react'
-import { View, Text, Button, StyleSheet, Alert, Image, FlatList } from 'react-native';
+import { View, Text, Button, StyleSheet, Alert, FlatList,ActivityIndicator} from 'react-native';
+import {Image} from 'react-native-elements' ;
 import {Entypo} from 'react-native-vector-icons';
 import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen';
 
@@ -28,8 +29,10 @@ export default function ProductCards({promos,title}) {
                         return (
 
                             <Image
+                            
                                 style={styles.box}
                                 source={{ uri: item.name }}
+                                PlaceholderContent={<ActivityIndicator />}
                             />
                         )
                     }}
