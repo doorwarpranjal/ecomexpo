@@ -8,13 +8,20 @@ import {
 import { ScrollView } from "react-native-gesture-handler";
 
 
-export default function ProfileScreen() {
+export default function ProfileScreen({navigation}) {
 
   const RedColor = "#EF3651";
   const BackgroundColor = "#1E1F28";
 
   const image =
     "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcShAlOK_wo1VxtOZFtaxq-_bcF-YMxZEqdQpWGSgWq-4nAKF8UfsjbY06SSogRtXZrYkcBVmofVnHWkIoTbzaDBTRIq_gMc1npR-fcd&usqp=CAU&ec=45688580";
+
+
+
+const onPersonalInfo = ()=>{
+  navigation.navigate('General Settings') ;
+}
+
 
   return (
     <ScrollView>
@@ -65,7 +72,7 @@ export default function ProfileScreen() {
 
           <Divider style={{ backgroundColor: '#ABB4BD',height : 0.5,opacity : 0.3 }} />
 
-          <TouchableOpacity style={styles.optionBox}>
+          <TouchableOpacity style={styles.optionBox} onPress={onPersonalInfo}>
             <Text style={{ fontSize: 18, fontWeight: '700', color: '#fff', marginTop: -5 }}>Settings </Text>
             <Text style={{ fontSize: 14, color: '#ABB4BD', marginTop: 5 }}>Notifications,Password,Phone Number</Text>
           </TouchableOpacity>

@@ -6,6 +6,8 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
+import SignupScreen from './SignupScreen';
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 
 export default function LoginScreen({ navigation }) {
@@ -18,16 +20,16 @@ const pressHandler = ()=>{
     <View style={styles.container}>
       <View
         style={{
-          height: hp("33%"),
+          height: hp("28%"),
           width: wp("100%"),
           display: "flex",
           justifyContent: "center",
           alignItems: "flex-start",
         }}
       >
-        <Icon name="keyboard-arrow-left" size={30} color="#fff" flex='1'
-          onPress={pressHandler}/>
-        <Text h1 style={styles.insideText}>
+       
+
+        <Text h2 style={styles.insideText}>
           Login
         </Text>
 
@@ -102,8 +104,11 @@ const pressHandler = ()=>{
           containerStyle={{ marginTop: 25 }}
         />
 
-<Text onPress={()=>{navigation.navigate('Signup')}} style={{color : '#fff',marginTop : 20}}>New User ? SignUp</Text>
-       
+<TouchableOpacity>
+<Text onPress={pressHandler} style={{color : '#fff',marginTop : 20, fontWeight: "bold"}}>New User ? SignUp</Text>
+</TouchableOpacity>      
+
+
       </View>
 
 
