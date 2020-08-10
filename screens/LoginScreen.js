@@ -6,12 +6,12 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
-import SignupScreen from './SignupScreen';
+
 
 export default function LoginScreen({ navigation }) {
 
 const pressHandler = ()=>{
-  navigation.navigate('Signup');
+  navigation.navigate('Address');
 }
 
   return (

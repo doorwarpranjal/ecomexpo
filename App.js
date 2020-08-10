@@ -10,6 +10,7 @@ import ProfileScreen from "./screens/ProfileScreen";
 import ContactScreen from "./screens/ContactScreen";
 import LoginScreen from './screens/LoginScreen' ;
 import SignupScreen from './screens/SignupScreen' ;
+import AddressScreen from './screens/AddressScreen';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 
@@ -19,7 +20,7 @@ const Tab = createBottomTabNavigator();
 
 export default function App() {
 
-  const [authUser, setauthUser] = useState(false);
+  const [authUser, setauthUser] = useState(true);
 //make this variable true to see what user will see when he is logged in
 
 
@@ -27,8 +28,10 @@ export default function App() {
   function LoginStack({navigation}){
     return(
       <Stack.Navigator>
+        <Stack.Screen name="Address" component={AddressScreen}/>
         <Stack.Screen name="Login" component={LoginScreen}/>
         <Stack.Screen name="Signup" component={SignupScreen}/>
+        
       </Stack.Navigator>
     )
     }
@@ -94,6 +97,13 @@ export default function App() {
         
 
         <Stack.Navigator>
+<Stack.Screen 
+name="AddressScreen"
+component={AddressScreen}
+options={{headerShown : false}}
+/>
+
+
           <Stack.Screen
             name="Login"
             component={LoginScreen}
