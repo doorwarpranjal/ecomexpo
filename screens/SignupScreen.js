@@ -80,7 +80,7 @@ export default function SignupScreen({navigation}) {
               secureTextEntry={true}
             />
 
-            <TouchableOpacity>
+            <TouchableOpacity  onPress={pressHandler}>
               <View
                 style={{
                   height: hp("5%"),
@@ -91,12 +91,10 @@ export default function SignupScreen({navigation}) {
                   alignItems: "center",
                   marginRight: wp("7%"),
                   marginTop: hp("2%"),
-                }}
-              >
+                }}>
+              
                 <Text
-                  style={{ color: "#fff", fontWeight: "bold" }}
-                  onPress={pressHandler}
-                >
+                  style={{ color: "#fff", fontWeight: "bold" }}>
                   Already Have An Account ? Login
                 </Text>
                 <Icon name="arrow-forward" size={28} color="#EF3651" />

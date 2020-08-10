@@ -92,17 +92,17 @@ export default function HomeScreen() {
   return (
     <ScrollView>
       <Header
-        leftComponent={{
+        centerComponent={{
           text: "EcomExpo",
           style: {
             color: "#fff",
-            fontSize: 18,
+            fontSize: 22,
             fontWeight: "bold",
-            width: wp("50%"),
-            marginHorizontal: 5,
+            // width: wp("0%"),
+            // marginHorizontal: 5,
           },
         }}
-        rightComponent={{ icon: "shopping-cart", color: "#fff" }}
+        // rightComponent={{ icon: "shopping-cart", color: "#fff" }}
         containerStyle={{
           backgroundColor: secondaryColor,
           justifyContent: "space-around",
