@@ -10,6 +10,7 @@ import ProfileScreen from "./screens/ProfileScreen";
 import ContactScreen from "./screens/ContactScreen";
 import LoginScreen from './screens/LoginScreen' ;
 import SignupScreen from './screens/SignupScreen' ;
+import AddressScreen from './screens/AddressScreen';
 import PersonalInfoScreen from './screens/PersonalnfoScreen' ;
 import WishlistScreen from './screens/WishlistScreen'
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -29,8 +30,10 @@ export default function App() {
   function LoginStack({navigation}){
     return(
       <Stack.Navigator>
+        <Stack.Screen name="Address" component={AddressScreen}/>
         <Stack.Screen name="Login" component={LoginScreen}/>
         <Stack.Screen name="Signup" component={SignupScreen}/>
+        
       </Stack.Navigator>
       )
     }
@@ -96,6 +99,13 @@ export default function App() {
         </Tab.Navigator>
       ) : (
         <Stack.Navigator>
+<Stack.Screen 
+name="AddressScreen"
+component={AddressScreen}
+options={{headerShown : false}}
+/>
+
+
           <Stack.Screen
             name="Login"
             component={LoginScreen}

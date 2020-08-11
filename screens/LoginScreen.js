@@ -13,7 +13,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 export default function LoginScreen({ navigation }) {
 
 const pressHandler = ()=>{
-  navigation.navigate('Signup');
+  navigation.navigate('Address');
 }
 
   return (
