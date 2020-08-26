@@ -22,6 +22,7 @@ export default function ProductCards({promos,title}) {
                     marginLeft: 20,
                     fontWeight: 'bold'
                 }}>{title} <Entypo name="new" size={22} color="lightgray" ></Entypo> </Text>
+              
                 <FlatList horizontal={true}
                     data={promos}
                     showsHorizontalScrollIndicator={false}
@@ -37,6 +38,7 @@ export default function ProductCards({promos,title}) {
                         )
                     }}
                 />
+                
             </View>
 
 

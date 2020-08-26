@@ -12,7 +12,8 @@ import LoginScreen from './screens/LoginScreen' ;
 import SignupScreen from './screens/SignupScreen' ;
 import AddressScreen from './screens/AddressScreen';
 import PersonalInfoScreen from './screens/PersonalnfoScreen' ;
-import WishlistScreen from './screens/WishlistScreen'
+import WishlistScreen from './screens/WishlistScreen' ;
+import CategoryScreen from './screens/CategoryScreen' ;
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 
@@ -55,6 +56,24 @@ export default function App() {
     }
 
 
+    function HomeStack({navigation}){
+      return(
+        <Stack.Navigator  >
+          <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
+          <Stack.Screen name="Category" component={CategoryScreen} options={{
+            headerStyle: {
+              backgroundColor: '#7B7B7B',
+            },
+            headerTitleStyle : {
+              color : 'black'
+            },
+          }}/>
+        </Stack.Navigator>
+        )
+      }
+
+
+
   return (
     <NavigationContainer>
       {/* Check if user is logged in if yes we send him to homescreen or else to contact screen */}
@@ -87,11 +106,11 @@ export default function App() {
             inactiveBackgroundColor: "#1E1F28",
             activeBackgroundColor: "#1E1F28",
             style: StyleSheet.create({
-              borderTopWidth: 0.5,
+              borderTopWidth: 0,
             }),
           }}
         >
-          <Tab.Screen name="Home" component={HomeScreen} />
+          <Tab.Screen name="Home" component={HomeStack} />
           <Tab.Screen name="Wishlist" component={WishlistScreen} />
           <Tab.Screen name="Profile" component={SettingStack} />
           <Tab.Screen name="Contact" component={ContactScreen}  />
