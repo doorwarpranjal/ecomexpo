@@ -1,17 +1,7 @@
 import React, { useRef, useState } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import {
-  Image,
-  Icon,
-  Divider,
-  Input,
-  Button,
-  CheckBox,
-} from "react-native-elements";
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from "react-native-responsive-screen";
+import {Image,Icon,Divider,Input,Button,CheckBox,} from "react-native-elements";
+import { widthPercentageToDP as wp,heightPercentageToDP as hp,} from "react-native-responsive-screen";
 import { ScrollView } from "react-native-gesture-handler";
 import ProductCards from "../components/ProductCards";
 import RBSheet from "react-native-raw-bottom-sheet";
@@ -63,11 +53,12 @@ export default function PersonalnfoScreen() {
   const tf = this;
 
   return (
+
+
     <ScrollView>
       <View style={styles.container}>
         <View style={styles.headingSection}>
           <Text style={styles.mainHeading}>My Details</Text>
-          {/* <Text style={styles.smallHeading}>Personal Information</Text> */}
         </View>
 
         <View style={styles.personalInfoSection}>
@@ -86,8 +77,7 @@ export default function PersonalnfoScreen() {
               paddingVertical: 10,
               borderRadius: 5,
               justifyContent: "center",
-            }}
-          />
+            }} />
 
           <Input
             label="Phone Number (+91)"
@@ -104,18 +94,16 @@ export default function PersonalnfoScreen() {
               paddingVertical: 10,
               borderRadius: 5,
               justifyContent: "center",
-            }}
-          />
+            }} />
 
-    
+
 
           <View style={styles.passwordContainer}>
             <Text style={styles.passwordContainerMainHeading}>Password</Text>
             <TouchableOpacity>
               <Text
                 style={styles.passwordContainerSubHeading}
-                onPress={() => refRBSheet.current.open()}
-              >
+                onPress={() => refRBSheet.current.open()}>
                 Change
               </Text>
             </TouchableOpacity>
@@ -131,6 +119,7 @@ export default function PersonalnfoScreen() {
                 checked={notificationChecked}
                 checkedIcon="dot-circle-o"
                 uncheckedIcon="circle-o"
+                checkedColor='#55D85A'
                 onPress={() => setnotificationChecked(!notificationChecked)}
               />
             </TouchableOpacity>
@@ -143,12 +132,15 @@ export default function PersonalnfoScreen() {
                 // title='Click Here'
                 checked={newArrivalChecked}
                 checkedIcon="dot-circle-o"
+                checkedColor='#55D85A'
                 uncheckedIcon="circle-o"
                 onPress={() => setnewArrivalChecked(!newArrivalChecked)}
               />
             </TouchableOpacity>
           </View>
 
+
+          {/* This is react native bottom sheet and this will have input for change password  */}
           <RBSheet
             ref={refRBSheet}
             closeOnDragDown={true}
@@ -190,13 +182,11 @@ export default function PersonalnfoScreen() {
                 placeholder="******"
                 inputStyle={{ color: "#fff" }}
                 containerStyle={{
-                  // backgroundColor: "#2A2C36",
                   width: wp("94%"),
                   paddingVertical: 15,
                   borderRadius: 10,
                 }}
-                secureTextEntry={true}
-              />
+                secureTextEntry={true} />
 
               <Input
                 label="Confirm Password"
@@ -204,18 +194,16 @@ export default function PersonalnfoScreen() {
                 placeholder="******"
                 inputStyle={{ color: "#fff" }}
                 containerStyle={{
-                  // backgroundColor: "#2A2C36",
                   width: wp("94%"),
                   paddingVertical: 15,
                   borderRadius: 10,
                 }}
-                secureTextEntry={true}
-              />
+                secureTextEntry={true} />
 
               <Button
                 icon={<Icon name="lock" size={22} color="white" />}
                 iconRight
-                title="Change Password"
+                title="Save Password"
                 titleStyle={{ fontSize: 18, marginRight: 10 }}
                 buttonStyle={{
                   width: wp("80%"),
@@ -244,7 +232,6 @@ export default function PersonalnfoScreen() {
             },
             shadowOpacity: 0.5,
             shadowRadius: 5.84,
-
             elevation: 5,
           }}
           iconContainerStyle={{ marginLeft: 10 }}
@@ -271,7 +258,6 @@ const styles = StyleSheet.create({
   },
   headingSection: {
     height: hp("10%"),
-    // backgroundColor : 'teal'
   },
   mainHeading: {
     fontSize: 28,

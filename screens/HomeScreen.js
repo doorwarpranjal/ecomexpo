@@ -8,6 +8,7 @@ import {
 import Icon from "react-native-vector-icons/FontAwesome";
 import ProductCards from "../components/ProductCards";
 import { ScrollView } from "react-native-gesture-handler";
+import SaleComponent from '../components/SaleComponent' ;
 
 export default function HomeScreen() {
   const primaryColor = "#EF3651";
@@ -134,6 +135,13 @@ export default function HomeScreen() {
         <ProductCards promos={promos} title="New Styles" />
 
         <ProductCards promos={forhim} title="Styles for Him" />
+
+        
+        <SaleComponent />
+
+
+
+
       </View>
     </ScrollView>
   );
