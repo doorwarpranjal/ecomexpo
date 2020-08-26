@@ -24,7 +24,7 @@ const Tab = createBottomTabNavigator();
 
 export default function App() {
 
-  const [authUser, setauthUser] = useState(false);
+  const [authUser, setauthUser] = useState(true);
 //make this variable true to see what user will see when he is logged in
 
 
@@ -32,8 +32,7 @@ export default function App() {
   function LoginStack({navigation}){
     return(
       <Stack.Navigator>
-        <Stack.Screen name="Shipping" component={ShippingScreen}/>
-        <Stack.Screen name="Address" component={AddressScreen}/>
+       
         <Stack.Screen name="Login" component={LoginScreen}/>
         <Stack.Screen name="Signup" component={SignupScreen}/>
         
@@ -53,6 +52,10 @@ export default function App() {
             color : 'black'
           },
         }}/>
+
+
+<Stack.Screen name="Shipping" component={ShippingScreen}/>
+        <Stack.Screen name="Address" component={AddressScreen}/>
       </Stack.Navigator>
       )
     }
@@ -120,17 +123,7 @@ export default function App() {
         </Tab.Navigator>
       ) : (
         <Stack.Navigator>
-            <Stack.Screen
-            name="ShippingScreen"
-            component={ShippingScreen}
-            options={{ headerShown: false }}
-          />
-<Stack.Screen 
-name="AddressScreen"
-component={AddressScreen}
-options={{headerShown : false}}
-/>
-
+    
 
           <Stack.Screen
             name="Login"

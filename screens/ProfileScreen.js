@@ -58,7 +58,7 @@ const onPersonalInfo = ()=>{
 
                  <Divider style={{ backgroundColor: '#ABB4BD',height : 0.5,opacity : 0.3 }} />
 
-          <TouchableOpacity style={styles.optionBox}>
+          <TouchableOpacity style={styles.optionBox} onPress={()=> navigation.navigate('Shipping')} >
             <Text style={{ fontSize: 18, fontWeight: '700', color: '#fff', marginTop: -5 }}>Shipping Address    </Text>
             <Text style={{ fontSize: 14, color: '#ABB4BD', marginTop: 5 }}>Add multiple shipping addresses</Text>
           </TouchableOpacity>

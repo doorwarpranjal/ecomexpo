@@ -43,6 +43,7 @@ export default function ShippingScreen({ navigation }) {
         
         
       </View>
+      <Button title="Add New Address" onPress={()=>navigation.navigate('Address')}/>
     </View>
     </ScrollView>
   );

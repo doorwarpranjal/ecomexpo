@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { StyleSheet, View, Dimensions, TextInput } from "react-native";
 import { Button, Input, Text,CheckBox } from "react-native-elements";
 import Icon from "react-native-vector-icons/MaterialIcons";
@@ -10,7 +10,7 @@ import {
 export default function ShippingInput({ name, street, Fullddress }) {
 
 
-
+const [checked, setchecked] = useState(false)
 
   return (
     
@@ -25,7 +25,18 @@ export default function ShippingInput({ name, street, Fullddress }) {
       <Text style={styles.addressText}>{Fullddress}</Text>
       <CheckBox
   title='Use this as shipping address.'
-  checked={this.state.checked}
+  checked={checked}
+  containerStyle={{
+    backgroundColor : 'transparent',
+    borderWidth : 0
+  }}
+  textStyle={{
+    color:'white'
+  }}
+  checkedIcon="dot-circle-o"
+  uncheckedIcon="circle-o"
+  checkedColor='#55D85A'
+  onPress={() => setchecked(!checked)}
 />
     </View>
   );
