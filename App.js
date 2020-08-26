@@ -11,6 +11,7 @@ import ContactScreen from "./screens/ContactScreen";
 import LoginScreen from './screens/LoginScreen' ;
 import SignupScreen from './screens/SignupScreen' ;
 import AddressScreen from './screens/AddressScreen';
+import ShippingScreen from './screens/ShippingScreen';
 import PersonalInfoScreen from './screens/PersonalnfoScreen' ;
 import WishlistScreen from './screens/WishlistScreen' ;
 import CategoryScreen from './screens/CategoryScreen' ;
@@ -23,7 +24,7 @@ const Tab = createBottomTabNavigator();
 
 export default function App() {
 
-  const [authUser, setauthUser] = useState(true);
+  const [authUser, setauthUser] = useState(false);
 //make this variable true to see what user will see when he is logged in
 
 
@@ -31,6 +32,7 @@ export default function App() {
   function LoginStack({navigation}){
     return(
       <Stack.Navigator>
+        <Stack.Screen name="Shipping" component={ShippingScreen}/>
         <Stack.Screen name="Address" component={AddressScreen}/>
         <Stack.Screen name="Login" component={LoginScreen}/>
         <Stack.Screen name="Signup" component={SignupScreen}/>
@@ -118,6 +120,11 @@ export default function App() {
         </Tab.Navigator>
       ) : (
         <Stack.Navigator>
+            <Stack.Screen
+            name="ShippingScreen"
+            component={ShippingScreen}
+            options={{ headerShown: false }}
+          />
 <Stack.Screen 
 name="AddressScreen"
 component={AddressScreen}
