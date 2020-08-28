@@ -17,19 +17,7 @@ export default function InputComponent ({ labelTag, placeholder }) {
     
 
       <View style={styles.viewpd}>
-        <Input
-          label={labelTag}
-          labelStyle={{ color: "#ABB4BD", fontSize: 11 }}
-          placeholder={placeholder}
-          inputStyle={{ color: "#fff" }}
-          inputContainerStyle={{  }}
-          containerStyle={{
-            backgroundColor: "rgba(42, 44 ,54 , 43%)",
-            width: wp("94%"),
-            
-            paddingVertical: 10,
-          }}
-        />
+        <Text>Size</Text>
 
       
        </View>
