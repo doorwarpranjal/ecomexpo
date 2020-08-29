@@ -8,58 +8,58 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "./screens/HomeScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import ContactScreen from "./screens/ContactScreen";
-import LoginScreen from './screens/LoginScreen' ;
-import SignupScreen from './screens/SignupScreen' ;
-import AddressScreen from './screens/AddressScreen';
-import ShippingScreen from './screens/ShippingScreen';
-import PersonalInfoScreen from './screens/PersonalnfoScreen' ;
-import WishlistScreen from './screens/WishlistScreen' ;
-import CategoryScreen from './screens/CategoryScreen' ;
-import Icon from 'react-native-vector-icons/FontAwesome';
-import Ionicon from 'react-native-vector-icons/Ionicons';
-
+import LoginScreen from "./screens/LoginScreen";
+import SignupScreen from "./screens/SignupScreen";
+import AddressScreen from "./screens/AddressScreen";
+import ShippingScreen from "./screens/ShippingScreen";
+import OnProductScreen from "./screens/OnProductScreen";
+import PersonalInfoScreen from "./screens/PersonalnfoScreen";
+import WishlistScreen from "./screens/WishlistScreen";
+import Icon from "react-native-vector-icons/FontAwesome";
+import Ionicon from "react-native-vector-icons/Ionicons";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 export default function App() {
+  const [authUser, setauthUser] = useState(false);
+  //make this variable true to see what user will see when he is logged in
 
-  const [authUser, setauthUser] = useState(true);
-//make this variable true to see what user will see when he is logged in
-
-
-
-  function LoginStack({navigation}){
-    return(
+  function LoginStack({ navigation }) {
+    return (
       <Stack.Navigator>
-       
-        <Stack.Screen name="Login" component={LoginScreen}/>
-        <Stack.Screen name="Signup" component={SignupScreen}/>
-        
+        <Stack.Screen name="Onproduct" component={OnProductScreen} />
+        <Stack.Screen name="Shipping" component={ShippingScreen} />
+        <Stack.Screen name="Address" component={AddressScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Signup" component={SignupScreen} />
       </Stack.Navigator>
-      )
-    }
+    );
+  }
 
-  function SettingStack({navigation}){
-    return(
-      <Stack.Navigator  >
-        <Stack.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }}/>
-        <Stack.Screen name="General Settings" component={PersonalInfoScreen} options={{
-          headerStyle: {
-            backgroundColor: '#7B7B7B',
-          },
-          headerTitleStyle : {
-            color : 'black'
-          },
-        }}/>
-
-
-<Stack.Screen name="Shipping" component={ShippingScreen}/>
-        <Stack.Screen name="Address" component={AddressScreen}/>
+  function SettingStack({ navigation }) {
+    return (
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Profile"
+          component={ProfileScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="General Settings"
+          component={PersonalInfoScreen}
+          options={{
+            headerStyle: {
+              backgroundColor: "#7B7B7B",
+            },
+            headerTitleStyle: {
+              color: "black",
+            },
+          }}
+        />
       </Stack.Navigator>
-      )
-    }
-
+    );
+  }
 
     function HomeStack({navigation}){
       return(
@@ -97,7 +97,7 @@ export default function App() {
                 iconName = <Icon name="md-cart" size={26} color={color} />;
               } else if (route.name === "Contact") {
                 iconName = <Ionicon name="ios-call" size={26} color={color} />;
-              }else if (route.name === "Wishlist") {
+              } else if (route.name === "Wishlist") {
                 iconName = <Icon name="heart" size={26} color={color} />;
               }
 
@@ -118,12 +118,30 @@ export default function App() {
           <Tab.Screen name="Home" component={HomeStack} />
           <Tab.Screen name="Wishlist" component={WishlistScreen} />
           <Tab.Screen name="Profile" component={SettingStack} />
-          <Tab.Screen name="Contact" component={ContactScreen}  />
-        
+          <Tab.Screen name="Contact" component={ContactScreen} />
         </Tab.Navigator>
       ) : (
+
+
+
         <Stack.Navigator>
-    
+        <Stack.Screen
+        name="Onproduct"
+        component={OnProductScreen}
+        options={{ headerShown: false }}
+      />
+
+       
+          <Stack.Screen
+            name="ShippingScreen"
+            component={ShippingScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="AddressScreen"
+            component={AddressScreen}
+            options={{ headerShown: false }}
+          />
 
           <Stack.Screen
             name="Login"
