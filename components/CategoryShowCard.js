@@ -17,7 +17,9 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 
-export default function CategoryShowCard({ cardData }) {
+export default function CategoryShowCard({ cardData, navigation }) {
+
+
   return (
     <View style={styles.CategoryShowCardContainer}>
       <FlatList
@@ -26,7 +28,9 @@ export default function CategoryShowCard({ cardData }) {
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => {
           return (
-            <TouchableOpacity style={styles.categoryBox}>
+            <TouchableOpacity style={styles.categoryBox} onPress={()=>{navigation.navigate('ProductCards',{
+              categoryChoosen : item.categoryName
+            })}}>
               <View style={styles.categoryBoxText}>
           <Text style={styles.categoryBoxTextName} >{item.categoryName}</Text>
               </View>

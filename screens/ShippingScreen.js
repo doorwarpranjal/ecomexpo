@@ -1,5 +1,11 @@
 import React from "react";
-import { StyleSheet, View, Dimensions, TextInput,ScrollView } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Dimensions,
+  TextInput,
+  ScrollView,
+} from "react-native";
 import { Button, Input, Text } from "react-native-elements";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import {
@@ -8,6 +14,8 @@ import {
 } from "react-native-responsive-screen";
 import SignupScreen from "./SignupScreen";
 import ShippingInput from "../components/ShippingInput";
+import CustomHeader from "../components/CustomHeader";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function ShippingScreen({ navigation }) {
   const pressHandler = () => {
@@ -15,48 +23,44 @@ export default function ShippingScreen({ navigation }) {
   };
 
   return (
-<ScrollView>
-    <View style={styles.container}>
-      <View
-        style={{
-          marginBottom : 30,
-          width: wp("100%"),
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "flex-start",
-        }}
-      >
-        {/* <Icon
-          name="keyboard-arrow-left"
-          size={30}
-          color="#fff"
-          flex="1"
-          onPress={pressHandler}
-        /> */}
-        <Text h4 style={styles.insideText}>
-          Shipping Addresses.
-        </Text>
-      </View>
+    <SafeAreaView style={{backgroundColor : '#1E1F28'}}> 
+      <ScrollView>
+        <View style={styles.container}>
+          <CustomHeader
+            iconLeft="ios-arrow-back"
+            mainHeading="Saved Address"
+            navigation={navigation}
+          />
 
-      <View>
-        <ShippingInput name = {'John Doe'} street={'Christian Compound Colony '} Fullddress={'California Dextas,Usa'} />
-        
-        
-      </View>
-      <Button title="Add New Address" onPress={()=>navigation.navigate('Address')}/>
-    </View>
-    </ScrollView>
+          <View>
+            <ShippingInput
+              name={"John Doe"}
+              street={"Christian Compound Colony "}
+              Fullddress={"California Dextas,Usa"}
+            />
+          </View>
+          <Button
+            title="Add New Address"
+            onPress={() => navigation.navigate("Address")}
+            buttonStyle={{ backgroundColor: "#EF3651", paddingHorizontal: 20 }}
+            containerStyle={{
+              marginTop: 20,
+            }}
+          />
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    height:hp('100%'),
+    height: hp("100%"),
     backgroundColor: "#1E1F28",
-    alignItems:'center',
-    paddingBottom : 20 ,
+    alignItems: "center",
+    paddingBottom: 20,
   },
- 
+
   insideText: {
     color: "#fff",
     fontWeight: "bold",

@@ -61,9 +61,11 @@ const styles = StyleSheet.create({
     display: "flex",
     marginVertical: 10,
     backgroundColor: "#2A2C36",
+    paddingHorizontal : 5,
+    borderRadius  : 5,
     color: "#fff",
-    width: wp("90%"),
+    width: wp("95%"),
     height: hp("25%"),
-    justifyContent: "flex-start",
+    justifyContent: "center",
   },
 });

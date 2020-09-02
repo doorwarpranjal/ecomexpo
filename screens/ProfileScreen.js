@@ -6,6 +6,7 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import { ScrollView } from "react-native-gesture-handler";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 
 export default function ProfileScreen({navigation}) {
@@ -24,6 +25,7 @@ const onPersonalInfo = ()=>{
 
 
   return (
+    <SafeAreaView style={{backgroundColor : '#1E1F28'}}> 
     <ScrollView>
       <View style={styles.container}>
 
@@ -90,6 +92,7 @@ const onPersonalInfo = ()=>{
 
       </View>
     </ScrollView>
+    </SafeAreaView>
   );
 }
 
@@ -99,7 +102,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#1E1F28",
     justifyContent: "flex-start",
     fontSize: 42,
-    paddingTop : 40
+ 
   },
   mainHeading :{
     fontSize : 28,color : '#fff',   paddingHorizontal : 20,
@@ -108,7 +111,7 @@ const styles = StyleSheet.create({
   }
   ,
   userProfileContainer: {
-    height: hp("18%"),
+    height: hp("16%"),
 backgroundColor : '#2A2C36',
     width: wp("100%"),
     marginTop: hp("2%"),
@@ -119,9 +122,9 @@ backgroundColor : '#2A2C36',
     justifyContent : 'space-around'
   },
   userImage: {
-    height: hp("15%"),
-    width: wp("28%"),
-  
+    height: hp("14%"),
+    width: wp("26%"),
+ 
     borderRadius: 200,
     overflow : 'hidden'
   },
