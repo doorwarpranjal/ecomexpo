@@ -10,7 +10,7 @@ import ProductCards from "../components/ProductCards";
 import { ScrollView } from "react-native-gesture-handler";
 import SaleComponent from '../components/SaleComponent' ;
 
-export default function HomeScreen() {
+export default function HomeScreen({navigation}) {
   const primaryColor = "#EF3651";
   const secondaryColor = "#1E1F28";
 
@@ -90,6 +90,20 @@ export default function HomeScreen() {
     },
   ];
 
+
+  const salecontent = {
+    mainheading : 'Summer Sale',
+    mainposter : 'image3.png',
+  
+    leftheading : 'Hot Tees',
+    leftposter : '../assets/image6.jpg',
+
+    rightheading : 'Cool Hats',
+    rightposter : '../assets/image.png'
+  }
+
+
+
   return (
     <ScrollView>
       <Header
@@ -137,7 +151,7 @@ export default function HomeScreen() {
         <ProductCards promos={forhim} title="Styles for Him" />
 
         
-        <SaleComponent />
+        <SaleComponent  salecontent={salecontent} title="image3.png" navigation={navigation} />
 
 
 

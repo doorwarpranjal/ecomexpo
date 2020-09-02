@@ -5,7 +5,9 @@ import {
   Dimensions,
   TextInput,
   ScrollView,
-  Image
+  Image,
+  SafeAreaView,
+  ActivityIndicator,
 } from "react-native";
 import {
   Button,
@@ -26,49 +28,52 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 import { AntDesign,} from "@expo/vector-icons";
 import Size from "../components/SizeComponent";
 import ProductScroll from "../components/ProductScroll";
+import CustomHeader from '../components/CustomHeader' ;
 
-export default function OnProductScreen({ navigation }) {
+export default function OnProductScreen({ navigation,route }) {
   const pressHandler = () => {
     navigation.navigate("Address");
   };
 
+
+const { product } = route.params ;
+
+
+
+
   return (
+    <SafeAreaView>
     <ScrollView>
       <View style={styles.container}>
-        <View style={styles.header}>
-          <View>
-            <AntDesign name="left" size={28} color="#fff" />
-          </View>
-          <View>
-            <Text h3 style={{ color: "#fff" }}>
-              Short Dress
-            </Text>
-          </View>
-          <View>
-            <AntDesign name="sharealt" size={28} color="#fff" />
-          </View>
+
+<CustomHeader iconLeft="ios-arrow-back" mainHeading={product.product_brand} iconRight="md-share" navigation={navigation} />
+
+        <View style={styles.productImages}>
+        <ProductScroll product_images = {product.product_images}/>
+
+
         </View>
-        <ProductScroll/>
-       
+{/*        
         <View style={styles.optionGrid}>
           <Size size="Size" />
           <Size size="Black" />
-        </View>
+        </View> */}
+
+
         <View style={styles.productHeading}>
           <View style={styles.productHeading2} >
             <View>
-          <Text h3 style={{ color: "#fff" }}>
-            H$M
+          <Text h4 style={{ color: "#fff" }}>
+            {product.product_brand}
           </Text>
-          <Text style={{ color: "#ABB4BD", size: 15 }}>Short black dress</Text>
+          <Text style={{ color: "#ABB4BD", fontSize: 15 }}>{product.product_name}</Text>
           </View>
-          <Text h3 style ={{color:"#fff"}}>$19.9</Text>
+      <Text h4 style ={{color:"#fff"}}>Rs {product.product_price}</Text>
          
           </View>
           <View>
           <Text style={{ color: "#F5F5F5", fontSize: 15, marginTop: hp("2%") }}>
-            Short dress in soft cotton jersey with decorative buttons down the
-            front and a wide, frill-trimmed square
+            {product.product_description}.
           </Text>
           </View>
         </View>
@@ -92,6 +97,7 @@ export default function OnProductScreen({ navigation }) {
       </View>
       
     </ScrollView>
+    </SafeAreaView>
   );
 }
 
@@ -99,35 +105,24 @@ const styles = StyleSheet.create({
   container: {
     minHeight: hp("100%"),
     backgroundColor: "#1E1F28",
+    marginTop : 25,
+    display: 'flex',
   },
-  header: {
-    marginVertical: hp("5%"),
+  productImages : {
+    
+    backgroundColor : 'lightyellow'
+  },
 
-    marginHorizontal: wp("5%"),
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  size: {
-    marginVertical: hp("5%"),
-
-    marginHorizontal: wp("5%"),
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
   optionGrid: {
     marginHorizontal: wp("5%"),
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
   },
   productHeading: {
     display:'flex',
     marginHorizontal: wp("5%"),
-    marginTop: hp("5%"),
+    marginTop: hp("1%"),
     
   },
   productHeading2:{
@@ -138,6 +133,10 @@ const styles = StyleSheet.create({
   addToCart:{
     width:wp('80%'),
     marginHorizontal:wp('10%')
+  },
+  imageBox:{
+    height : hp('45%'),
+    width : wp('100%')
   }
  
 

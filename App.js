@@ -14,6 +14,8 @@ import AddressScreen from "./screens/AddressScreen";
 import ShippingScreen from "./screens/ShippingScreen";
 import OnProductScreen from "./screens/OnProductScreen";
 import PersonalInfoScreen from "./screens/PersonalnfoScreen";
+import CategoryScreen from './screens/CategoryScreen' ;
+import ProductCardsScreen from './screens/ProductCardsScreen'
 import WishlistScreen from "./screens/WishlistScreen";
 import Icon from "react-native-vector-icons/FontAwesome";
 import Ionicon from "react-native-vector-icons/Ionicons";
@@ -22,7 +24,7 @@ const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 export default function App() {
-  const [authUser, setauthUser] = useState(false);
+  const [authUser, setauthUser] = useState(true);
   //make this variable true to see what user will see when he is logged in
 
   function LoginStack({ navigation }) {
@@ -50,16 +52,69 @@ export default function App() {
           component={PersonalInfoScreen}
           options={{
             headerStyle: {
-              backgroundColor: "#7B7B7B",
+              backgroundColor: "#ABB4BD",
             },
             headerTitleStyle: {
               color: "black",
             },
           }}
         />
+    <Stack.Screen
+          name="Shipping"
+          component={ShippingScreen}
+          options={{
+           headerShown : false
+          }}
+        />
+
+
+<Stack.Screen
+          name="Address"
+          component={AddressScreen}
+          options={{
+            headerShown : false
+          }}
+        />
+
+
+
       </Stack.Navigator>
     );
   }
+
+    function HomeStack({navigation}){
+      return (
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+            options={{ headerShown: false }}
+          />
+
+          <Stack.Screen
+            name="Category"
+            component={CategoryScreen}
+            options={{
+            headerShown : false
+            }}
+          />
+
+            <Stack.Screen
+            name="ProductCards"
+            component={ProductCardsScreen}
+            options={{ headerShown: false }}
+          />
+            <Stack.Screen name="OnProduct" component={OnProductScreen}   options={{ headerShown: false }} />
+
+
+        </Stack.Navigator>
+      );
+
+
+
+      }
+
+
 
   return (
     <NavigationContainer>
@@ -93,11 +148,11 @@ export default function App() {
             inactiveBackgroundColor: "#1E1F28",
             activeBackgroundColor: "#1E1F28",
             style: StyleSheet.create({
-              borderTopWidth: 0.5,
+              borderTopWidth: 0,
             }),
           }}
         >
-          <Tab.Screen name="Home" component={HomeScreen} />
+          <Tab.Screen name="Home" component={HomeStack} />
           <Tab.Screen name="Wishlist" component={WishlistScreen} />
           <Tab.Screen name="Profile" component={SettingStack} />
           <Tab.Screen name="Contact" component={ContactScreen} />
@@ -113,17 +168,7 @@ export default function App() {
         options={{ headerShown: false }}
       />
 
-       
-          <Stack.Screen
-            name="ShippingScreen"
-            component={ShippingScreen}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="AddressScreen"
-            component={AddressScreen}
-            options={{ headerShown: false }}
-          />
+     
 
           <Stack.Screen
             name="Login"
