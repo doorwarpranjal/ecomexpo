@@ -21,14 +21,9 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
-import SignupScreen from "./SignupScreen";
-import { TouchableOpacity } from "react-native-gesture-handler";
-import ShippingInput from "../components/ShippingInput";
-import Icon from "react-native-vector-icons/MaterialIcons";
-import { AntDesign,} from "@expo/vector-icons";
-import Size from "../components/SizeComponent";
 import ProductScroll from "../components/ProductScroll";
 import CustomHeader from '../components/CustomHeader' ;
+import ProductCards from '../components/ProductCards' ;
 
 export default function OnProductScreen({ navigation,route }) {
   const pressHandler = () => {
@@ -38,7 +33,43 @@ export default function OnProductScreen({ navigation,route }) {
 
 const { product } = route.params ;
 
-
+const forhim = [
+  {
+    name:
+      "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11077774/2019/12/24/29bdd2c8-3e2f-43aa-8ce5-55f3a501a4fa1577166621272-Difference-of-Opinion-Men-Sea-Green-Solid-Round-Neck-T-shirt-1.jpg",
+    key: "1",
+  },
+  {
+    name:
+      "https://images.unsplash.com/photo-1512437011370-3c5a37a2190f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+    key: "2",
+  },
+  {
+    name:
+      "https://images.unsplash.com/photo-1532660621034-fb55e2e59762?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
+    key: "3",
+  },
+  {
+    name:
+      "https://image.freepik.com/free-photo/negative-emotions-isolated-portrait-young-attractive-unhappy-black-skinned-male-student-with-afro-hairstyle-casual-outfit-tearing-clothes-with-hands-looking-camera-with-angry-expression_176420-12956.jpg",
+    key: "4",
+  },
+  {
+    name:
+      "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2478236/2018/2/23/11519376919799-WROGN-Men-Red--Beige-Slim-Fit-Checked-Casual-Shirt-7761519376919619-1.jpg",
+    key: "5",
+  },
+  {
+    name:
+      "https://image.freepik.com/free-photo/front-view-man-with-shirt_23-2148542758.jpg",
+    key: "7",
+  },
+  {
+    name:
+      "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11077816/2019/12/24/ad792ba2-a3fe-4784-a053-a40cf6cb32cb1577167596901-Difference-of-Opinion-Men-Coral-Solid-Round-Neck-T-shirt-611-1.jpg",
+    key: "8",
+  },
+];
 
 
   return (
@@ -93,7 +124,21 @@ const { product } = route.params ;
           containerStyle={{ marginTop: 25,marginBottom:24 }}
         />
         </View>
-        <View style={styles.productDiscription}></View>
+
+
+        {/* <View style={styles.productDiscription}></View> */}
+
+
+<View style={styles.recommendSection}>
+
+
+<ProductCards promos={forhim} title="Recommended for You" />
+
+
+</View>
+
+
+
       </View>
       
     </ScrollView>
@@ -107,6 +152,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#1E1F28",
     marginTop : 25,
     display: 'flex',
+    paddingBottom : 20,
   },
   productImages : {
     
@@ -137,6 +183,9 @@ const styles = StyleSheet.create({
   imageBox:{
     height : hp('45%'),
     width : wp('100%')
+  },recommendSection:{
+    height : hp('30%'),
+    backgroundColor : 'darkgray'
   }
  
 

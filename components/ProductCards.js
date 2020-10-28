@@ -23,7 +23,7 @@ export default function ProductCards({ promos, title }) {
       <View style={styles.offerPanel}>
         <Text
           style={{
-            fontSize: 22,
+            fontSize: 18,
             marginBottom: 15,
             fontWeight: "bold",
             marginLeft: 10,
