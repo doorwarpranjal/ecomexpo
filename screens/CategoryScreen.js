@@ -19,9 +19,9 @@ import CustomHeader from "../components/CustomHeader";
 export default function ContactScreen({ navigation, route }) {
   const primaryColor = "#EF3651";
   const secondaryColor = "#1E1F28";
-
+       
   const { categoryContent, categoryHeading } = route.params;
-
+   
   return (
 <SafeAreaView style={{backgroundColor : '#1E1F28'}}> 
       <View style={styles.container}>
@@ -42,7 +42,7 @@ export default function ContactScreen({ navigation, route }) {
     </SafeAreaView>
 
 
-
+    
   );
 }
 

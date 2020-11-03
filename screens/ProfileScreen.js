@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#1E1F28",
     justifyContent: "flex-start",
     fontSize: 42,
- 
+
   },
   mainHeading :{
     fontSize : 28,color : '#fff',   paddingHorizontal : 20,

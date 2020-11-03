@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     CategoryShowCardContainer:{
         width : wp('100%'),
         paddingHorizontal : 5,
-       
+     
 
     },
   categoryBox: {
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     overflow : 'hidden',
 
    borderRadius : 5
-   
+  
   },
   categoryBoxText : {
       flex  : 1,

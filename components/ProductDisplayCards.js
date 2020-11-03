@@ -1,4 +1,5 @@
 import React from "react";
+import {useState} from "react";
 import {
   View,
   Text,
@@ -114,7 +115,11 @@ export default function ProductCards({ categoryChoosen, title,navigation}) {
 
   ];
 
-  const posts = products.map((item) => {
+     
+    
+ const posts = products.map((item) => {
+    const [Name, setName]=useState("bookmark-o");
+    const [Toggle, setToggle]=useState(false);
     return (
      
       <View style={styles.productCardContainer} key={item.product_id}>
@@ -135,7 +140,17 @@ export default function ProductCards({ categoryChoosen, title,navigation}) {
 
           <View style={styles.textRightContainer}>
             <TouchableOpacity>
-            <Icon name="bookmark-o" size={28} color="darkgray" />
+            <Icon name={Name} size={28} color="darkgray" onPress={()=>{
+              if(Toggle===false)      
+              {
+                setName("bookmark")
+                setToggle(true)
+              }
+              else{
+                setName("bookmark-o")
+                setToggle(false)
+              }
+            }}/>
             </TouchableOpacity>
           </View>
         </View>

@@ -27,8 +27,8 @@ export default function ProductCardsScreen({ navigation, route }) {
           <View style={styles.innerContainer}>
            
           <ProductDisplayCards categoryChoosen={categoryChoosen} navigation={navigation} />
-
-
+          
+           
           </View>
         </View>
       </ScrollView>
